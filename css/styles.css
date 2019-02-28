@@ -1,0 +1,57 @@
+html {
+	font-family: 'Shadows Into Light', cursive;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 150px;
+	grid-auto-rows: 150px;
+	grid-gap: 50px;
+}
+
+.box {
+	/* decoration */
+	background-image: radial-gradient(#ffffff, #e5e5e2);
+	border-radius: 7px;
+	box-shadow: 5px 5px 10px rgba(84, 84, 74, 0.25);
+	/* layout */
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 1s;	
+}
+
+.box:nth-child(1) {
+	grid-column: span 2;
+	grid-row: span 2;
+}
+
+.box:nth-child(odd):hover {
+	color: blue;
+	transform: rotate(-20deg);
+}
+
+.box:nth-child(even):hover {
+	color: red;
+	transform: rotate(20deg);
+}
+
+.box .heart {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+}
+
+@media screen and (min-width: 768px) {
+	.container {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+
+@media screen and (min-width: 991px) {
+	.container {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+}
